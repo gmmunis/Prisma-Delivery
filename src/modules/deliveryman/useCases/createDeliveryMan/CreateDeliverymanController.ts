@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { CreateDeliveryManUseCase } from "./CreateDeliveryManUseCase";
+import { CreateDeliveryManUseCase } from "./CreateDeliverymanUseCase";
 
 export class CreateDeliveryManController {
     async handle(request: Request, response: Response) {
         const { username, password } = request.body;
-        const createDeliveryManUseCase = new CreateDeliveryManUseCase();
 
-        const result = await createDeliveryManUseCase.execute({
+        const createDeliverymanUseCase = new CreateDeliveryManUseCase();
+        const result = await createDeliverymanUseCase.execute({
             username,
             password,
         });
